@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vermeer - Belajar Color Grading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home">Vermeer</a>
+  <nav>
+    <a href="#tutorial">Tutorial</a><a href="#preset">Preset</a><a href="#simulator">Simulator</a>
+    <a href="#wheel">Color Wheel</a><a href="#quiz">Quiz</a>
+  </nav>
+  <a class="btn dark" href="#simulator">Coba simulator</a>
+</header>
+
+<main>
+<section id="home" class="stage">
+  <div class="frame">
+    <div class="hero-text">
+      <h1>Vermeer</h1>
+      <p>Belajar color grading dari dasar sampai membuat look sinematik, lengkap dengan simulator dan quiz.</p>
+      <a class="btn glow" href="#tutorial">Mulai belajar</a>
+    </div>
+    <div class="widget w-left">Exposure
+      <div class="bars"><i style="height:30%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:20%"></i></div>
+    </div>
+    <div class="widget w-right">Sebelum dan sesudah
+      <div class="split"><div class="scene"></div><div class="scene f-tealorange cut"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Apa itu color grading?</h2>
+  <p class="lead">Color grading adalah proses mengubah warna, kontras, dan suasana sebuah foto atau video supaya punya mood tertentu. Warna hangat terasa nyaman, warna dingin terasa tegang, dan warna pudar terasa nostalgia.</p>
+
+  <h3>Color correction vs color grading</h3>
+  <div class="two">
+    <article class="panel"><h4>Color correction</h4><p>Memperbaiki gambar agar terlihat natural dan akurat: menyeimbangkan exposure, white balance, dan menghilangkan warna yang salah. Tujuannya: gambar benar.</p></article>
+    <article class="panel alt"><h4>Color grading</h4><p>Memberi gaya dan suasana pada gambar yang sudah benar. Tujuannya: gambar punya karakter dan emosi.</p></article>
+  </div>
+
+  <h3>Workflow editing dari awal sampai akhir</h3>
+  <ol class="flow">
+    <li><b>Import &amp; pilih foto.</b> Pilih file terbaik, idealnya format RAW agar data warna lengkap.</li>
+    <li><b>Atur exposure.</b> Pastikan gambar tidak terlalu gelap atau terang.</li>
+    <li><b>Koreksi white balance.</b> Netralkan warna putih agar tidak kekuningan atau kebiruan.</li>
+    <li><b>Atur contrast, shadows, dan highlights.</b> Bentuk kedalaman gambar.</li>
+    <li><b>Grading warna.</b> Atur saturation, tone, dan warna dominan sesuai mood.</li>
+    <li><b>Sentuhan akhir.</b> Tambah grain atau vignette bila perlu.</li>
+    <li><b>Export.</b> Simpan dalam resolusi dan format sesuai tujuan.</li>
+  </ol>
+</section>
+
+<section id="tutorial" class="wrap">
+  <h2>Tutorial pemula</h2>
+  <div class="grid">
+    <article class="panel"><h4>Dasar exposure</h4><p>Exposure adalah jumlah cahaya pada gambar. Terlalu tinggi membuat detail terang hilang (overexposed), terlalu rendah membuat gambar gelap (underexposed). Targetkan detail terlihat di area terang dan gelap.</p></article>
+    <article class="panel"><h4>Contrast</h4><p>Contrast adalah perbedaan antara area terang dan gelap. Contrast tinggi terlihat tegas dan dramatis, contrast rendah terlihat lembut dan datar.</p></article>
+    <article class="panel"><h4>Saturation</h4><p>Saturation adalah kekuatan warna. Naikkan sedikit untuk warna hidup, turunkan untuk kesan kalem atau muram. Hati-hati, terlalu tinggi membuat warna tidak natural.</p></article>
+    <article class="panel"><h4>White balance</h4><p>White balance menentukan suhu warna. Geser ke biru untuk dingin, ke kuning untuk hangat. Gunakan objek putih atau abu-abu sebagai patokan agar warna akurat.</p></article>
+    <article class="panel"><h4>Shadows &amp; highlights</h4><p>Shadows mengatur area gelap, highlights mengatur area terang. Angkat shadows untuk membuka detail gelap, turunkan highlights untuk menyelamatkan langit yang terlalu terang.</p></article>
+  </div>
+</section>
+
+<section id="preset" class="wrap">
+  <h2>Preset style</h2>
+  <p class="lead">Setiap style punya karakter warna sendiri. Gambar contoh di bawah dibuat dengan CSS, jadi kamu bisa melihat efeknya langsung.</p>
+  <div class="grid presets">
+
+    <article class="panel preset">
+      <div class="ba"><div class="scene"></div><div class="scene f-cinematic"></div></div>
+      <h4>Cinematic</h4>
+      <p class="dom"><i style="background:#2b3a4a"></i><i style="background:#8a7a62"></i><i style="background:#c9b48a"></i> Biru-abu gelap, cokelat lembut</p>
+      <p>Warna dominan kalem dengan contrast tinggi dan saturation sedikit turun.</p>
+      <p><b>Cara membuat:</b> naikkan contrast, turunkan saturation 10-20%, tambah sedikit nuansa dingin di shadows dan hangat di highlights.</p>
+    </article>
+
+    <article class="panel preset">
+      <div class="ba"><div class="scene"></div><div class="scene f-tealorange"></div></div>
+      <h4>Teal &amp; orange</h4>
+      <p class="dom"><i style="background:#1f6f7a"></i><i style="background:#e0782f"></i><i style="background:#f1c38b"></i> Teal di bayangan, oranye di kulit/cahaya</p>
+      <p>Memanfaatkan warna komplementer, sehingga subjek terlihat menonjol.</p>
+      <p><b>Cara membuat:</b> di shadows geser warna ke teal, di highlights dan midtones geser ke oranye, lalu naikkan contrast.</p>
+    </article>
+
+    <article class="panel preset">
+      <div class="ba"><div class="scene"></div><div class="scene f-moody"></div></div>
+      <h4>Moody</h4>
+      <p class="dom"><i style="background:#1d2430"></i><i style="background:#3b4a52"></i><i style="background:#6b6a5f"></i> Gelap, dingin, kehijauan redup</p>
+      <p>Suasana misterius dan emosional, cocok untuk drama atau hujan.</p>
+      <p><b>Cara membuat:</b> turunkan exposure, naikkan contrast, turunkan saturation, dan gelapkan shadows.</p>
+    </article>
+
+    <article class="panel preset">
+      <div class="ba"><div class="scene"></div><div class="scene f-vintage"></div></div>
+      <h4>Vintage</h4>
+      <p class="dom"><i style="background:#b59a6a"></i><i style="background:#8c7a5a"></i><i style="background:#d9cdb0"></i> Kuning pudar, cokelat krem</p>
+      <p>Terasa seperti foto lama, hangat, dan nostalgia.</p>
+      <p><b>Cara membuat:</b> turunkan contrast, angkat blacks agar hitam jadi pudar, geser warna ke kuning, tambah grain.</p>
+    </article>
+
+    <article class="panel preset">
+      <div class="ba"><div class="scene"></div><div class="scene f-film"></div></div>
+      <h4>Film look</h4>
+      <p class="dom"><i style="background:#4f6b55"></i><i style="background:#c2a073"></i><i style="background:#8a5a4a"></i> Hijau lembut, kulit hangat</p>
+      <p>Meniru karakter film analog: warna lembut dengan sedikit pergeseran hijau.</p>
+      <p><b>Cara membuat:</b> kurva tone lembut, geser sedikit hijau di shadows, saturation moderat, tambah grain halus.</p>
+    </article>
+
+    <article class="panel preset">
+      <div class="ba"><div class="scene"></div><div class="scene f-sunset"></div></div>
+      <h4>Orange sunset</h4>
+      <p class="dom"><i style="background:#e8591a"></i><i style="background:#f2a03d"></i><i style="background:#8c2f2f"></i> Oranye, kuning keemasan, merah</p>
+      <p>Hangat dan dramatis seperti matahari terbenam.</p>
+      <p><b>Cara membuat:</b> naikkan temperature ke hangat, naikkan saturation oranye dan merah, tambah sedikit exposure di highlights.</p>
+    </article>
+  </div>
+</section>
+
+<section id="simulator" class="wrap">
+  <h2>Simulator sederhana</h2>
+  <p class="lead">Unggah fotomu, lalu geser slider. Foto tidak dikirim ke mana pun, semua diproses di browser.</p>
+  <div class="sim">
+    <div class="sim-view"><div id="preview" class="scene"><img id="photo" alt="Foto yang diunggah" hidden></div></div>
+    <div class="controls">
+      <label class="btn file">Pilih foto<input type="file" id="file" accept="image/*" hidden></label>
+      <label>Brightness <output id="o-b">100%</output><input type="range" id="brightness" min="30" max="170" value="100"></label>
+      <label>Contrast <output id="o-c">100%</output><input type="range" id="contrast" min="30" max="170" value="100"></label>
+      <label>Saturation <output id="o-s">100%</output><input type="range" id="saturation" min="0" max="250" value="100"></label>
+      <button class="btn ghost" id="reset" type="button">Reset</button>
+    </div>
+  </div>
+</section>
+
+<section id="wheel" class="wrap">
+  <h2>Color wheel</h2>
+  <p class="lead">Color wheel menunjukkan hubungan antarwarna. Dari sini kita memilih kombinasi yang enak dilihat.</p>
+  <div class="wheel-row">
+    <div class="wheel" aria-label="Lingkaran warna"></div>
+    <div class="harm">
+      <article class="panel"><h4>Complementary</h4><p>Dua warna yang saling berseberangan di wheel. Kontrasnya kuat, contohnya teal dan oranye.</p>
+        <div class="sw"><i style="background:#1f8a8a"></i><i style="background:#e8782a"></i></div></article>
+      <article class="panel"><h4>Analogous</h4><p>Warna yang bersebelahan. Hasilnya harmonis dan tenang, contohnya kuning, oranye, merah.</p>
+        <div class="sw"><i style="background:#f2c230"></i><i style="background:#ee8a2a"></i><i style="background:#d9452b"></i></div></article>
+      <article class="panel"><h4>Triadic</h4><p>Tiga warna dengan jarak sama di wheel. Meriah dan seimbang, contohnya merah, kuning, biru.</p>
+        <div class="sw"><i style="background:#d9322b"></i><i style="background:#f2c230"></i><i style="background:#2b5fd9"></i></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="wrap">
+  <h2>Quiz</h2>
+  <div class="panel quiz">
+    <p id="q-count"></p>
+    <h4 id="q-text"></h4>
+    <div id="q-opts" class="opts"></div>
+    <p id="q-fb" role="status"></p>
+    <button class="btn" id="q-next" type="button" hidden>Lanjut</button>
+  </div>
+</section>
+</main>
+
+<footer><p>Vermeer, dibuat untuk belajar color grading. Dinamai dari pelukis Johannes Vermeer yang terkenal dengan permainan cahaya dan warna.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
