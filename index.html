@@ -19,20 +19,27 @@
 </header>
 
 <main>
-<section id="home" class="stage">
-  <div class="frame">
-    <div class="hero-text">
-      <h1>Vermeer</h1>
-      <p>Belajar color grading dari dasar sampai membuat look sinematik, lengkap dengan simulator dan quiz.</p>
+<section id="home" class="tour">
+  <div class="sticky">
+    <div class="tour-text" id="t-box">
+      <small id="t-step"></small>
+      <h1 id="t-title">Vermeer</h1>
+      <p id="t-desc"></p>
       <a class="btn glow" href="#tutorial">Mulai belajar</a>
-      <p style="margin:1.5rem auto 0;font-weight:700;">By Kevin</p>
+      <p class="credit">By Kevin</p>
     </div>
-    <div class="widget w-left">Exposure
-      <div class="bars"><i style="height:30%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:20%"></i></div>
+    <div class="iso">
+      <div class="stack" id="stack">
+        <div class="plane" style="--i:0"><div class="scene" id="hero-scene"></div></div>
+        <div class="plane" style="--i:1"><span>Exposure</span></div>
+        <div class="plane" style="--i:2"><span>White balance</span></div>
+        <div class="plane" style="--i:3"><span>Contrast</span></div>
+        <div class="plane" style="--i:4"><span>Color grade</span></div>
+        <div class="plane" style="--i:5"><span>Export</span></div>
+      </div>
     </div>
-    <div class="widget w-right">Sebelum dan sesudah
-      <div class="split"><div class="scene"></div><div class="scene f-tealorange cut"></div></div>
-    </div>
+    <div class="info" id="t-info"></div>
+    <ol class="steps" id="steps"></ol>
   </div>
 </section>
 

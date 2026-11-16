@@ -113,3 +113,84 @@ footer p{margin:0 auto;max-width:60ch}
   .frame{padding-bottom:9rem}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Animasi & efek futuristik ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(218,241,222,.25),0 0 34px rgba(142,182,155,.9)}50%{box-shadow:0 0 0 13px rgba(218,241,222,.1),0 0 64px rgba(142,182,155,1)}}
+@keyframes drift1{0%,100%{transform:rotate(-5deg) translate(0,0)}50%{transform:rotate(-3deg) translate(2%,-5%)}}
+@keyframes drift2{0%,100%{transform:rotate(6deg) translate(0,0)}50%{transform:rotate(4deg) translate(-2%,-4%)}}
+@keyframes float{50%{transform:translateY(-9px)}}
+@keyframes barPulse{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.5)}}
+@keyframes sweep{0%,100%{clip-path:inset(0 0 0 15%)}50%{clip-path:inset(0 0 0 85%)}}
+@keyframes line{0%,100%{left:15%}50%{left:85%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.hero-text h1{animation:fadeUp .9s .1s both}
+.hero-text p{animation:fadeUp .9s .3s both}
+.hero-text .btn{animation:fadeUp .9s .5s both,pulse 2.8s 1.5s ease-in-out infinite}
+.frame::before{animation:drift1 9s ease-in-out infinite}
+.frame::after{animation:drift2 11s ease-in-out infinite}
+.widget{animation:float 5s ease-in-out infinite}
+.w-right{animation-delay:-2.5s}
+.bars i{transform-origin:bottom;animation:barPulse 2.4s ease-in-out infinite}
+.bars i:nth-child(2n){animation-delay:-1.2s}
+.bars i:nth-child(3n){animation-delay:-.6s}
+.split .cut{animation:sweep 6s ease-in-out infinite}
+.split::after{content:"";position:absolute;top:0;bottom:0;width:2px;background:var(--mint);box-shadow:0 0 10px var(--sage);animation:line 6s ease-in-out infinite}
+.wheel{animation:spin 40s linear infinite}
+
+/* Cahaya mengikuti kursor di hero */
+.spot{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,40%),rgba(255,255,255,.5),transparent 60%)}
+.frame:hover .spot{opacity:1}
+
+/* Hover panel */
+.panel{transition:transform .3s,box-shadow .3s,border-color .3s}
+.panel:hover{transform:translateY(-4px);border-color:rgba(142,182,155,.6);box-shadow:0 12px 40px rgba(142,182,155,.18)}
+.quiz:hover{transform:none}
+
+/* Muncul saat di-scroll */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.js .reveal.in{opacity:1;transform:none}
+
+/* Bar progres scroll */
+.progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:30;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--sage),var(--mint))}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .spot{display:none}
+}
+
+/* ===== Tour 3D isometrik (scroll) ===== */
+.tour{position:relative;height:560vh;color:var(--d2);transition:color .5s;background:linear-gradient(180deg,var(--mint) 0%,var(--sage) 35%,var(--d4) 70%,var(--d2) 100%)}
+.tour.dark{color:var(--mint)}
+.sticky{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:2rem;padding:5.5rem 5vw 5rem;overflow:hidden}
+.tour-text{transition:opacity .18s,transform .18s}
+.tour-text.out{opacity:0;transform:translateY(12px)}
+.tour-text small{display:inline-block;margin-bottom:.8rem;padding:.25rem .8rem;border-radius:999px;font-weight:700;background:rgba(5,31,32,.12);border:1px solid currentColor}
+.tour h1{background:none;color:inherit;-webkit-text-fill-color:currentColor;font-size:clamp(2.8rem,8vw,6rem)}
+.tour-text p{max-width:42ch;margin:0 0 1.6rem;font-size:1.1rem;opacity:.85}
+.tour .credit{margin:1.2rem 0 0;font-weight:700;opacity:1}
+.iso{perspective:1500px;display:grid;place-items:center;height:100%}
+.stack{position:relative;width:340px;height:255px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(var(--rz,-40deg))}
+.stack::before{content:"";position:absolute;inset:0;border-radius:24px;transform:translateZ(-30px);background:rgba(5,31,32,.4);filter:blur(28px)}
+.plane{position:absolute;inset:0;border-radius:18px;transform:translateZ(calc(var(--i) * var(--gap,8px)));border:1px solid rgba(255,255,255,.75);background:linear-gradient(135deg,rgba(var(--t,142,182,155),.4),rgba(255,255,255,.08));box-shadow:0 20px 50px -20px rgba(5,31,32,.6);transition:box-shadow .4s,border-color .4s}
+.plane:nth-child(1){background:none;--t:0,0,0}
+.plane:nth-child(3){--t:218,241,222}
+.plane:nth-child(4){--t:35,83,71}
+.plane:nth-child(6){--t:22,56,50}
+.plane .scene{height:100%;aspect-ratio:auto;border-radius:17px;transition:filter .7s}
+.plane span{position:absolute;left:14px;bottom:10px;font:600 .8rem Sora,sans-serif;color:var(--d1)}
+.plane.on{border-color:#fff;box-shadow:0 0 0 2px var(--mint),0 0 44px rgba(218,241,222,.95)}
+.info{position:absolute;right:5vw;bottom:6rem;padding:.8rem 1.1rem;border-radius:18px;background:rgba(5,31,32,.62);color:var(--mint);border:1px solid var(--line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font-size:.9rem}
+.steps{position:absolute;left:5vw;right:5vw;bottom:1.4rem;display:flex;gap:.8rem;list-style:none;margin:0;padding:0}
+.steps li{flex:1;padding-top:.45rem;font-size:.75rem;border-top:3px solid rgba(128,160,140,.45);opacity:.65;transition:.4s}
+.steps li.done{border-color:var(--sage);opacity:.85}
+.steps li.on{border-color:var(--mint);opacity:1;font-weight:700}
+@media(max-width:800px){
+  .sticky{grid-template-columns:1fr;grid-template-rows:auto 1fr;gap:0;padding-top:5rem}
+  .tour-text p{font-size:.95rem;margin-bottom:1rem}
+  .stack{scale:.62}
+  .info{display:none}
+  .steps li{font-size:.62rem}
+}
